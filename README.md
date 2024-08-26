@@ -7,35 +7,35 @@ Este proyecto tiene el propóstio de optimizar el registro de productos y recopi
 3. El sistema debe generar reportes sobre las ventas realizadas en un período de tiempo específico, mostrando detalles como el total vendido, productos más vendidos, y márgenes de ganancia.
 
 <!-- Símbología
-✔ - Completado
-✖ - No completado
+✅ - Completado
+❌ - No completado
 🚧 - En proceso
 -->
 
 ## Tareas completadas del proyecto
 ### Primeros pasos
-<span style="color: red; margin-left: 10px;">🚧</span> Definir tareas del proyecto<br>
-<span style="color: red; margin-left: 10px;">🚧</span> Definir requisitos funcionales<br>
-<span style="color: red; margin-left: 10px;">✖</span> Diseñar un boceto de la base de datos<br>
-<span style="color: red; margin-left: 10px;">✖</span> Definir endpoints y rutas del proyecto<br>
-<span style="color: red; margin-left: 10px;">✖</span> Diseñar un boceto de la interfaz del proyecto<br>
+- 🚧 Definir tareas del proyecto
+- 🚧 Definir requisitos funcionales
+- ❌ Diseñar un boceto de la base de datos
+- ❌ Definir endpoints y rutas del proyecto
+- ❌ Diseñar un boceto de la interfaz del proyecto
 
 ### Backend
-<span style="color: red; margin-left: 10px;">✖</span> Configurar el entorno de desarrollo (Node.js, Express)<br>
-<span style="color: red; margin-left: 10px;">✖</span> Creación de la base de datos (MongoDB con Mongoose)<br>
-<span style="color: red; margin-left: 10px;">✖</span> Implementación de registrar un producto<br>
-<span style="color: red; margin-left: 10px;">✖</span> Implementación de visualizar un producto<br>
-<span style="color: red; margin-left: 10px;">✖</span> Implementación de eliminar un producto<br>
-<span style="color: red; margin-left: 10px;">✖</span> Implementación de buscar un producto<br>
-<span style="color: red; margin-left: 10px;">✖</span> Implementación de modificar un producto<br>
+- ❌ Configurar el entorno de desarrollo (Node.js, Express)
+- ❌ Creación de la base de datos (MongoDB con Mongoose)
+- ❌ Implementación de registrar un producto
+- ❌ Implementación de visualizar un producto
+- ❌ Implementación de eliminar un producto
+- ❌ Implementación de buscar un producto
+- ❌ Implementación de modificar un producto
 
 ### Frontend
-<span style="color: red; margin-left: 10px;">✖</span> Configurar el entorno de desarrollo (React con Vite)<br>
-<span style="color: red; margin-left: 10px;">✖</span> Crear la estructura de componentes (Formulario de productos, lista de productos, etc.)<br>
-<span style="color: red; margin-left: 10px;">✖</span> Conexión con la API del backend<br>
-<span style="color: red; margin-left: 10px;">✖</span> Implementación de registrar un producto<br>
-<span style="color: red; margin-left: 10px;">✖</span> Implementación de visualizar un producto<br>
-<span style="color: red; margin-left: 10px;">✖</span> Implementación de eliminar un producto<br>
-<span style="color: red; margin-left: 10px;">✖</span> Implementación de buscar un producto<br>
-<span style="color: red; margin-left: 10px;">✖</span> Implementación de modificar un producto<br>
-<span style="color: red; margin-left: 10px;">✖</span> Diseñar una interfaz de usuario intuitiva<br>
+- ❌ Configurar el entorno de desarrollo (React con Vite)
+- ❌ Crear la estructura de componentes (Formulario de productos, lista de productos, etc.)
+- ❌ Conexión con la API del backend
+- ❌ Implementación de registrar un producto
+- ❌ Implementación de visualizar un producto
+- ❌ Implementación de eliminar un producto
+- ❌ Implementación de buscar un producto
+- ❌ Implementación de modificar un producto
+- ❌ Diseñar una interfaz de usuario intuitiva
