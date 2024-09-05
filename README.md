@@ -14,10 +14,10 @@ Este proyecto tiene el propóstio de optimizar el registro de productos y recopi
 
 ## Tareas del proyecto
 ### Análisis
-- 🚧 Definir tareas del proyecto
+- ✅ Definir tareas del proyecto
 - 🚧 BPMN del proceso actual
-- 🚧 BPMN del proyecto a desarrollar
 - 🚧 Toma de requisitos funcionales
+- 🚧 BPMN del proyecto a desarrollar
 
 ### Diseño
 - ❌ Diseñar casos de uso 
@@ -49,3 +49,4 @@ Este proyecto tiene el propóstio de optimizar el registro de productos y recopi
 
 ### Pruebas
 ### Implementación
+### Mantención
