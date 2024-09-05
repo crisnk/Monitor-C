@@ -15,12 +15,12 @@ Este proyecto tiene el propóstio de optimizar el registro de productos y recopi
 ## Tareas del proyecto
 ### Análisis
 - 🚧 Definir tareas del proyecto
-- ❌ BPMN del proceso actual
-- ❌ BPMN del proceso futuro
+- 🚧 BPMN del proceso actual
+- 🚧 BPMN del proyecto a desarrollar
 - 🚧 Toma de requisitos funcionales
 
 ### Diseño
-= ❌ Diseñar casos de uso 
+- ❌ Diseñar casos de uso 
 - ❌ MER de la base de datos
 - ❌ MR de la base de datos
 - ❌ Mock up del proyecto
