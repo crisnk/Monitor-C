@@ -1,5 +1,5 @@
 # Monitor-C
-Este proyecto tiene el propóstio de optimizar el registro de productos y recopilación de estadísticas del negocio al cual se va a implementar.
+Este proyecto tiene el propósito de gestionar un negocio mediante la digitalización de información en la cual se le implementará un sistema de venta e inventario de productos y la capacidad de generar reportes de estadísticas del negocio respectivamente.
  
 ### Simbología
 - ✅ - Completado
@@ -11,12 +11,11 @@ Este proyecto tiene el propóstio de optimizar el registro de productos y recopi
 - ✅ Definir tareas del proyecto
 - ✅ BPMN del proceso actual
 - 🚧 Toma de requisitos funcionales
-- 🚧 BPMN del proyecto a desarrollar
+- ❌ BPMN del proyecto a desarrollar
 
 ### Diseño
 - ❌ Diseñar casos de uso 
-- ❌ MER de la base de datos
-- ❌ MR de la base de datos
+- ❌ Modelado de base de datos no relacional
 - ❌ Mock up del proyecto
 - ❌ Definir endpoints y rutas del proyecto
 
