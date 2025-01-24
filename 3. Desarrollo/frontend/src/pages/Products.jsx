@@ -34,29 +34,29 @@ export default function Products() {
                 <table className='products-table'>
                     <thead>
                         <tr>
-                            <th>Código de barras</th>
-                            <th>Producto</th>
-                            <th>Descripción</th>
-                            <th>Marca</th>
-                            <th>Stock</th>
-                            <th>Contenido neto</th>
-                            <th>Precio de venta</th>
-                            <th>Precio de compra</th>
-                            <th>Estado</th>
+                            <th className='th-products-table'>Código de barras</th>
+                            <th className='th-products-table'>Producto</th>
+                            <th className='th-products-table'>Descripción</th>
+                            <th className='th-products-table'>Marca</th>
+                            <th className='th-products-table'>Stock</th>
+                            <th className='th-products-table'>Contenido neto</th>
+                            <th className='th-products-table'>Precio de venta</th>
+                            <th className='th-products-table'>Precio de compra</th>
+                            <th className='th-products-table'>Estado</th>
                         </tr>
                     </thead>
                     <tbody>
                         {filteredProducts.map((product) => (
                             <tr key={product._id}>
-                                <td style={{ textAlign: 'center' }}>{product.barcode}</td>
-                                <td>{product.name}</td>
-                                <td>{product.description}</td>
-                                <td>{product.brand}</td>
-                                <td>{product.stock}</td>
-                                <td>{product.productContent + product.UOM}</td>
-                                <td>{'$' + product.sellingPrice}</td>
-                                <td>{'$' + product.purchasePrice}</td>
-                                <td>{product.status}</td>
+                                <td className='td-products-table' style={{ textAlign: 'center' }}>{product.barcode}</td>
+                                <td className='td-products-table'>{product.name}</td>
+                                <td className='td-products-table'>{product.description}</td>
+                                <td className='td-products-table'>{product.brand}</td>
+                                <td className='td-products-table'>{product.stock}</td>
+                                <td className='td-products-table'>{product.productContent + product.UOM}</td>
+                                <td className='td-products-table'>{'$' + product.sellingPrice}</td>
+                                <td className='td-products-table'>{'$' + product.purchasePrice}</td>
+                                <td className='td-products-table'>{product.status}</td>
                             </tr>
                         ))}
                     </tbody>
