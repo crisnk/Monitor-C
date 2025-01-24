@@ -3,11 +3,13 @@ import { HOST, PORT } from "./config/configEnv.js";
 import connectDB from "./config/configDB.js";
 import indexRoutes from "./routes/index.routes.js";
 import morgan from "morgan";
+import cors from 'cors';
 
 async function setupServer() {
     try {
         const app = express();
 
+        app.use(cors({ credentials: true, origin: true })); // Para permitir solicitudes al backend desde el frontend
         app.use(morgan('dev')); // Para mostrar por consola las peticiones
         app.use(json()); // Para aceptar el body en formato json de las solicitudes/peticiones
         app.use('/api', indexRoutes);
