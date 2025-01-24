@@ -1,16 +1,7 @@
-import { useEffect, useState, useRef } from 'react';
-import DataTable from 'datatables.net-dt';
 import useGetProducts from '../hooks/products/useGetProducts';
-import 'datatables.net-responsive-dt';
-import '../styles/table.css';
 
 export default function Products() {
     const { products, isLoading } = useGetProducts();
-    const tableRef = useRef(null);
-
-    useEffect(() => {
-        new DataTable(tableRef.current);
-    }, [products]);
 
     if (isLoading) {
         return;
@@ -19,7 +10,7 @@ export default function Products() {
     return (
         <div>
             <h1>Productos</h1>
-            <table ref={tableRef} id="productsTable" className="display">
+            <table>
                 <thead>
                     <tr>
                         <th>Código de barras</th>
