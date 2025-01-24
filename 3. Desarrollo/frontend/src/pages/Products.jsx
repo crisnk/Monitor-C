@@ -5,18 +5,11 @@ import 'datatables.net-responsive-dt';
 import '../styles/table.css';
 
 export default function Products() {
-    const { products, fetchProducts } = useGetProducts();
-    const [isLoading, setIsLoading] = useState(true); // Estado para saber si los datos están cargando
-    const tableRef = useRef(null); // Referencia para la tabla
+    const { products, isLoading } = useGetProducts();
+    const tableRef = useRef(null);
 
     useEffect(() => {
-        fetchProducts().finally(() => setIsLoading(false)); // Cambia el estado de carga cuando los productos se hayan cargado
-    }, []);
-
-    useEffect(() => {
-        if (products.length > 0 && tableRef.current) {
-            new DataTable(tableRef.current); // Inicializa DataTable solo cuando haya productos
-        }
+        new DataTable(tableRef.current);
     }, [products]);
 
     if (isLoading) {
