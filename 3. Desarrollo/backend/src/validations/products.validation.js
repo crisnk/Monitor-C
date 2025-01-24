@@ -93,23 +93,14 @@ const productValidationSchema = Joi.object({
         }),
 
     status: Joi.string()
-        .valid("Activo", "Sin stock", "Descontinuado")
+        .valid("Activo", "Descontinuado")
         .required()
         .messages({
             "string.base": "El estado debe ser de tipo texto",
-            "any.only": "El estado debe ser uno de los siguientes valores: Activo, Sin stock, Descontinuado",
+            "any.only": "El estado debe ser uno de los siguientes valores: Activo, Descontinuado",
             "any.required": "El estado es obligatorio",
         }),
 
-    location: Joi.string()
-        .optional()
-        .allow("")
-        .max(100)
-        .messages({
-            "string.base": "La ubicación debe ser de tipo texto",
-            "string.empty": "La ubicación no puede estar vacía",
-            "string.max": "La ubicación no puede tener más de 100 caracteres",
-        }),
 });
 
 export default productValidationSchema;

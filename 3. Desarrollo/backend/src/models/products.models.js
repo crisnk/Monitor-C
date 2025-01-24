@@ -46,12 +46,8 @@ const productSchema = new mongoose.Schema({
     status: {
         type: String,
         required: true,
-        enum: ["Activo", "Sin stock", "Descontinuado"]
+        enum: ["Activo", "Descontinuado"]
     },
-    location: {
-        type: String,
-        required: false,
-    }
 
 }, { versionKey: false, timestamps: true });
 
