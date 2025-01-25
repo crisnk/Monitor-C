@@ -2,6 +2,7 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import '../src/styles/index.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Products from './pages/Products.jsx';
 
 createRoot(document.getElementById('root')).render(

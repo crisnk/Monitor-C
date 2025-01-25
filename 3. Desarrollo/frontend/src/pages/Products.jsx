@@ -23,18 +23,26 @@ export default function Products() {
 
     return (
         <div className='container-table'>
+            {/* Título */}
             <h1 className='title-table'>Productos</h1>
-            <SearchBar
-                data={products}
-                onFilter={handleFilter}
-                placeholder={'Buscar... '}
-                fields={['name', 'description', 'brand', 'stock', 'productContent', 'sellingPrice', 'purchasePrice', 'status']}
-            />
+
+            {/* Barra de herramientas */}
+            <div className='toolsbar-products-table'>
+                <SearchBar
+                    data={products}
+                    onFilter={handleFilter}
+                    fields={['name', 'description', 'brand', 'stock', 'productContent', 'sellingPrice', 'purchasePrice', 'status']}
+                />
+                <button type='button' className='btn btn-primary btn-sm add-products-button'>Agregar producto</button>
+            </div>
+
+            {/* Contenido de la tabla */}
             <div className='content-container-table'>
                 <table className='products-table'>
+                    {/* Encabezado de la tabla*/}
                     <thead>
                         <tr>
-                            <th className='th-products-table'>Código de barras</th>
+                            <th className='th-products-table barcode-products-column'>Código de barras</th>
                             <th className='th-products-table'>Producto</th>
                             <th className='th-products-table'>Descripción</th>
                             <th className='th-products-table'>Marca</th>
@@ -45,21 +53,29 @@ export default function Products() {
                             <th className='th-products-table'>Estado</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        {filteredProducts.map((product) => (
-                            <tr key={product._id}>
-                                <td className='td-products-table' style={{ textAlign: 'center' }}>{product.barcode}</td>
-                                <td className='td-products-table'>{product.name}</td>
-                                <td className='td-products-table'>{product.description}</td>
-                                <td className='td-products-table'>{product.brand}</td>
-                                <td className='td-products-table'>{product.stock}</td>
-                                <td className='td-products-table'>{product.productContent + product.UOM}</td>
-                                <td className='td-products-table'>{'$' + product.sellingPrice}</td>
-                                <td className='td-products-table'>{'$' + product.purchasePrice}</td>
-                                <td className='td-products-table'>{product.status}</td>
-                            </tr>
-                        ))}
-                    </tbody>
+
+                    {/* Tuplas de la tabla */}
+                    {filteredProducts.length === 0 ? (
+                        <tr>
+                            <td colSpan={9} style={{ textAlign: 'center' }}>No se encontraron coincidencias</td>
+                        </tr>
+                    ) : (
+                        <tbody>
+                            {filteredProducts.map((product) => (
+                                <tr key={product._id}>
+                                    <td className='td-products-table' style={{ textAlign: 'center' }}>{product.barcode}</td>
+                                    <td className='td-products-table'>{product.name}</td>
+                                    <td className='td-products-table'>{product.description}</td>
+                                    <td className='td-products-table'>{product.brand}</td>
+                                    <td className='td-products-table'>{product.stock}</td>
+                                    <td className='td-products-table'>{product.productContent + product.UOM}</td>
+                                    <td className='td-products-table'>{'$' + product.sellingPrice}</td>
+                                    <td className='td-products-table'>{'$' + product.purchasePrice}</td>
+                                    <td className='td-products-table'>{product.status}</td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    )}
                 </table>
             </div>
         </div>

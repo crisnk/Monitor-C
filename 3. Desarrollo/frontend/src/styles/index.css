@@ -10,7 +10,7 @@
 .title-table {
   display: flex;
   justify-content: center;
-  margin: 0.67em;
+  margin: 0.67em 0 0;
 }
 .content-container-table {
   display: flex;

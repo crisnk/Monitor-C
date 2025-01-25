@@ -5,6 +5,22 @@
     border-collapse: collapse;
 }
 
+.th-products-table {
+    text-align: center;
+}
+.td-products-table {
+    padding: 0 5px;
+}
 .td-products-table, .th-products-table {
     border: 1px solid black;
+}
+.toolsbar-products-table {
+    display: flex;
+    justify-content: end;
+    width: 80%;
+    margin: 0 auto 10px;
+    gap: 0 10px;
+}
+.barcode-products-column {
+    width: 220px;
 }

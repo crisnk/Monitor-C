@@ -1,7 +1,6 @@
 import { useState } from 'react';
-import '../styles/searchbar.css';
 
-export default function SearchBar({ data, fields, onFilter, placeholder }) {
+export default function SearchBar({ data, fields, onFilter }) {
     const [searchTerm, setSearchTerm] = useState('');
 
     const handleSearchChange = (event) => {
@@ -18,17 +17,14 @@ export default function SearchBar({ data, fields, onFilter, placeholder }) {
     };
 
     return (
-        <div className="searchbar-container">
-            <div className='searchbar-input-container'>
-                Buscar: 
-                <input
-                    type="text"
-                    placeholder={placeholder}
-                    value={searchTerm}
-                    onChange={handleSearchChange}
-                    className="search-input-table"
-                />
-            </div>
+        <div>
+            <input
+                type="text"
+                placeholder="Buscar"
+                className="form-control"
+                value={searchTerm}
+                onChange={handleSearchChange}
+            />
         </div>
     );
 }
