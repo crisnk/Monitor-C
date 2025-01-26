@@ -68,7 +68,7 @@ export default function ModalRegisterProduct() {
                     {/* Contenido */}
                     <div className="modal-body">
                         <form id="register-product-form" className="needs-validation" noValidate ref={formRef} onSubmit={handleSubmit}>
-                            
+
                             {/* Código de barras */}
                             <div className="form-floating mb-3">
                                 <input type="text" className="form-control" id="barcode-product" placeholder="Código de barras" required />
@@ -104,19 +104,42 @@ export default function ModalRegisterProduct() {
                             </div>
 
                             {/* Contenido neto */}
-                            <div className="form-floating mb-3">
-                                <input type="text" className="form-control" id="content-product" placeholder="Contenido neto" required />
-                                <label for="content-product">Contenido neto</label>
-                                <div className="invalid-feedback">Este campo es obligatorio</div>
+                            <div className="row g-2">
+                                <div className="col-md">
+                                    <div className="form-floating mb-3">
+                                        <input type="text" className="form-control" id="content-product" placeholder="Contenido neto" required />
+                                        <label for="content-product">Contenido neto</label>
+                                        <div className="invalid-feedback">Este campo es obligatorio</div>
+                                    </div>
+                                </div>
+                                <div className="col-md">
+                                    <div className="input-group mb-3">
+                                        <div className="form-floating">
+                                            <select className="form-select" id="UOM-product" required>
+                                                <option value="" selected disabled>Seleccione una opción</option>
+                                                <option value="g">Gramos (g)</option>
+                                                <option value="kg">Kilogramos (kg)</option>
+                                                <option value="ml">Mililitros (ml)</option>
+                                                <option value="l">Litros (L)</option>
+                                                <option value="u">Unidades (u)</option>
+                                            </select>
+                                            <label for="UOM-product">Unidad de medida</label>
+                                            <div className="invalid-feedback">Este campo es obligatorio</div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
 
                             {/* Precio de compra */}
                             <div className="row g-2">
                                 <div className="col-md-8">
-                                    <div className="form-floating">
-                                        <input type="text" className="form-control" id="purchase-price-product" placeholder="Precio de compra" value={purchasePrice} onChange={handlePurchasePriceChange} required />
-                                        <label htmlFor="purchase-price-product">Precio de compra</label>
-                                        <div className="invalid-feedback">Este campo es obligatorio</div>
+                                    <div className="input-group mb-3">
+                                        <span className="input-group-text">$</span>
+                                        <div className="form-floating">
+                                            <input type="text" className="form-control" id="purchase-price-product" placeholder="Precio de compra" value={purchasePrice} onChange={handlePurchasePriceChange} required />
+                                            <label htmlFor="purchase-price-product">Precio de compra</label>
+                                            <div className="invalid-feedback">Este campo es obligatorio</div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div className="col-md-4">
@@ -131,10 +154,13 @@ export default function ModalRegisterProduct() {
                             </div>
 
                             {/* Precio de venta */}
-                            <div className="form-floating mb-3">
-                                <input type="text" className="form-control" id="selling-price-product" placeholder="Precio de venta" value={sellingPrice} onChange={(e) => setSellingPrice(e.target.value)} required />
-                                <label for="selling-price-product">Precio de venta</label>
-                                <div className="invalid-feedback">Este campo es obligatorio</div>
+                            <div className="input-group mb-3">
+                                <span className="input-group-text">$</span>
+                                <div className="form-floating">
+                                    <input type="text" className="form-control" id="selling-price-product" placeholder="Precio de venta" value={sellingPrice} onChange={(e) => setSellingPrice(e.target.value)} required />
+                                    <label for="selling-price-product">Precio de venta</label>
+                                    <div className="invalid-feedback">Este campo es obligatorio</div>
+                                </div>
                             </div>
                         </form>
                     </div>
