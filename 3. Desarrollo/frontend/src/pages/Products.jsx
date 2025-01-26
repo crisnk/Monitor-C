@@ -58,7 +58,7 @@ export default function Products() {
                     {filteredProducts.length === 0 ? (
                         <tbody>
                             <tr>
-                                <td colSpan={9} style={{ textAlign: 'center' }}>No se encontraron coincidencias</td>
+                                <td colSpan={8} style={{ textAlign: 'center' }}>No se encontraron coincidencias</td>
                             </tr>
                         </tbody>
                     ) : (
