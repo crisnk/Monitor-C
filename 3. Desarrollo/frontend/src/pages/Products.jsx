@@ -51,7 +51,6 @@ export default function Products() {
                             <th className='th-products-table'>Contenido neto</th>
                             <th className='th-products-table'>Precio de venta</th>
                             <th className='th-products-table'>Precio de compra</th>
-                            <th className='th-products-table'>Estado</th>
                         </tr>
                     </thead>
 
@@ -74,7 +73,6 @@ export default function Products() {
                                     <td className='td-products-table'>{product.productContent + product.UOM}</td>
                                     <td className='td-products-table'>{'$' + product.sellingPrice}</td>
                                     <td className='td-products-table'>{'$' + product.purchasePrice}</td>
-                                    <td className='td-products-table'>{product.status}</td>
                                 </tr>
                             ))}
                         </tbody>

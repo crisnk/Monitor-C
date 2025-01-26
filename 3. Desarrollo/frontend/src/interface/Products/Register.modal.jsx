@@ -65,11 +65,6 @@ export default function ModalRegisterProduct() {
                                 <label for="selling-price-product">Precio de venta</label>
                                 <div className="invalid-feedback">Este campo es obligatorio</div>
                             </div>
-                            <div className="form-floating mb-3">
-                                <input type="text" className="form-control" id="status-product" placeholder="Estado" required />
-                                <label for="status-product">Estado</label>
-                                <div className="invalid-feedback">Este campo es obligatorio</div>
-                            </div>
                         </form>
                     </div>
                     {/* Footer */}

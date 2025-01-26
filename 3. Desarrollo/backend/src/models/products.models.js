@@ -43,11 +43,6 @@ const productSchema = new mongoose.Schema({
         required: true,
         min: [0, "El precio de venta no puede ser negativo"]
     },
-    status: {
-        type: String,
-        required: true,
-        enum: ["Activo", "Descontinuado"]
-    },
 
 }, { versionKey: false, timestamps: true });
 

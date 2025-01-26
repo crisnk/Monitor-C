@@ -92,15 +92,6 @@ const productValidationSchema = Joi.object({
             "any.required": "El precio de venta es obligatorio",
         }),
 
-    status: Joi.string()
-        .valid("Activo", "Descontinuado")
-        .required()
-        .messages({
-            "string.base": "El estado debe ser de tipo texto",
-            "any.only": "El estado debe ser uno de los siguientes valores: Activo, Descontinuado",
-            "any.required": "El estado es obligatorio",
-        }),
-
 });
 
 export default productValidationSchema;
