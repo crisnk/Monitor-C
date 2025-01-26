@@ -5,7 +5,7 @@ import ModalRegisterProduct from '../interface/Products/Register.modal.jsx';
 import '../styles/products.css';
 
 export default function Products() {
-    const { products, isLoading } = useGetProducts();
+    const { products, fetchProducts, isLoading } = useGetProducts();
     const [filteredProducts, setFilteredProducts] = useState([]);
 
     useEffect(() => {
@@ -32,9 +32,9 @@ export default function Products() {
                 <SearchBar
                     data={products}
                     onFilter={handleFilter}
-                    fields={['name', 'description', 'brand', 'stock', 'productContent', 'sellingPrice', 'purchasePrice', 'status']}
+                    fields={['name', 'description', 'brand', 'stock', 'productContent', 'sellingPrice', 'purchasePrice']}
                 />
-                <button type='button' className='btn btn-primary btn-sm add-products-button' data-bs-toggle='modal' data-bs-target='#register-product-modal'>Agregar producto</button>
+                <button type='button' className='btn btn-primary btn-sm' data-bs-toggle='modal' data-bs-target='#register-product-modal'>Registrar producto</button>
             </div>
 
             {/* Contenido de la tabla */}
@@ -49,8 +49,8 @@ export default function Products() {
                             <th className='th-products-table'>Marca</th>
                             <th className='th-products-table'>Stock</th>
                             <th className='th-products-table'>Contenido neto</th>
-                            <th className='th-products-table'>Precio de venta</th>
                             <th className='th-products-table'>Precio de compra</th>
+                            <th className='th-products-table'>Precio de venta</th>
                         </tr>
                     </thead>
 
@@ -71,14 +71,14 @@ export default function Products() {
                                     <td className='td-products-table'>{product.brand}</td>
                                     <td className='td-products-table'>{product.stock}</td>
                                     <td className='td-products-table'>{product.productContent + product.UOM}</td>
-                                    <td className='td-products-table'>{'$' + product.sellingPrice}</td>
                                     <td className='td-products-table'>{'$' + product.purchasePrice}</td>
+                                    <td className='td-products-table'>{'$' + product.sellingPrice}</td>
                                 </tr>
                             ))}
                         </tbody>
                     )}
                 </table>
-                <ModalRegisterProduct />
+                <ModalRegisterProduct fetchProducts={fetchProducts} />
             </div>
         </div>
     );

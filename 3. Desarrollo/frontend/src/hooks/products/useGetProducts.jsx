@@ -21,5 +21,5 @@ export default function useGetProducts() {
         fetchProducts();
     }, []);
 
-    return { products, isLoading };
+    return { products, fetchProducts, isLoading };
 }
