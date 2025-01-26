@@ -1,6 +1,7 @@
+import { useState, useEffect } from 'react';
 import useGetProducts from '../hooks/products/useGetProducts.jsx';
 import SearchBar from '../components/Search.jsx';
-import { useState, useEffect } from 'react';
+import ModalRegisterProduct from '../interface/Products/Register.modal.jsx';
 import '../styles/products.css';
 
 export default function Products() {
@@ -33,7 +34,7 @@ export default function Products() {
                     onFilter={handleFilter}
                     fields={['name', 'description', 'brand', 'stock', 'productContent', 'sellingPrice', 'purchasePrice', 'status']}
                 />
-                <button type='button' className='btn btn-primary btn-sm add-products-button'>Agregar producto</button>
+                <button type='button' className='btn btn-primary btn-sm add-products-button' data-bs-toggle='modal' data-bs-target='#register-product-modal'>Agregar producto</button>
             </div>
 
             {/* Contenido de la tabla */}
@@ -56,9 +57,11 @@ export default function Products() {
 
                     {/* Tuplas de la tabla */}
                     {filteredProducts.length === 0 ? (
-                        <tr>
-                            <td colSpan={9} style={{ textAlign: 'center' }}>No se encontraron coincidencias</td>
-                        </tr>
+                        <tbody>
+                            <tr>
+                                <td colSpan={9} style={{ textAlign: 'center' }}>No se encontraron coincidencias</td>
+                            </tr>
+                        </tbody>
                     ) : (
                         <tbody>
                             {filteredProducts.map((product) => (
@@ -77,6 +80,7 @@ export default function Products() {
                         </tbody>
                     )}
                 </table>
+                <ModalRegisterProduct />
             </div>
         </div>
     );
