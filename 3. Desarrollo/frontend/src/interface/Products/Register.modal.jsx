@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import useRegisterProduct from '../../hooks/products/useRegisterProduct';
 
 export default function ModalRegisterProduct({ fetchProducts }) {
@@ -15,19 +15,18 @@ export default function ModalRegisterProduct({ fetchProducts }) {
 
         if (!form.checkValidity()) {
             event.stopPropagation();
+        } else {
+            const formData = new FormData(form);
+            const formObject = Object.fromEntries(formData.entries());
+            handleRegister(formObject);
+    
+            form.reset();
+            form.classList.remove('was-validated');
+            setPurchasePrice('');
+            setProfitMargin('');
+            setSellingPrice('');
         }
-
-        const formData = new FormData(form);
-        const formObject = Object.fromEntries(formData.entries());
-        handleRegister(formObject);
-
-        form.reset();
-        setPurchasePrice('');
-        setProfitMargin('');
-        setSellingPrice('');
-
         form.classList.add('was-validated');
-        document.getElementById('register-product-modal').click();
     };
 
     const handlePurchasePriceChange = (event) => {
@@ -67,6 +66,24 @@ export default function ModalRegisterProduct({ fetchProducts }) {
         }
 
     };
+    
+    useEffect(() => {
+        const modalElement = document.getElementById('register-product-modal');
+    
+        const handleModalClose = () => {
+            formRef.current.reset();
+            formRef.current.classList.remove('was-validated');
+            setPurchasePrice('');
+            setProfitMargin('');
+            setSellingPrice('');
+        };
+    
+        modalElement.addEventListener('hidden.bs.modal', handleModalClose);
+    
+        return () => {
+            modalElement.removeEventListener('hidden.bs.modal', handleModalClose);
+        };
+    }, []);
 
     return (
         <div className="modal fade" id="register-product-modal">
@@ -89,6 +106,13 @@ export default function ModalRegisterProduct({ fetchProducts }) {
                                 <div className="invalid-feedback">Este campo es obligatorio</div>
                             </div>
 
+                            {/* Marca */}
+                            <div className="form-floating mb-3">
+                                <input type="text" className="form-control" id="brand-product" placeholder="Marca" name="brand" required />
+                                <label htmlFor="brand-product">Marca</label>
+                                <div className="invalid-feedback">Este campo es obligatorio</div>
+                            </div>
+                            
                             {/* Nombre del producto */}
                             <div className="form-floating mb-3">
                                 <input type="text" className="form-control" id="name-product" placeholder="Nombre del producto" name="name" required />
@@ -102,12 +126,6 @@ export default function ModalRegisterProduct({ fetchProducts }) {
                                 <label htmlFor="description-product">Descripción</label>
                             </div>
 
-                            {/* Marca */}
-                            <div className="form-floating mb-3">
-                                <input type="text" className="form-control" id="brand-product" placeholder="Marca" name="brand" required />
-                                <label htmlFor="brand-product">Marca</label>
-                                <div className="invalid-feedback">Este campo es obligatorio</div>
-                            </div>
 
                             {/* Stock */}
                             <div className="form-floating mb-3">

@@ -44,9 +44,9 @@ export default function Products() {
                     <thead>
                         <tr>
                             <th className='th-products-table barcode-products-column'>Código de barras</th>
+                            <th className='th-products-table'>Marca</th>
                             <th className='th-products-table'>Producto</th>
                             <th className='th-products-table'>Descripción</th>
-                            <th className='th-products-table'>Marca</th>
                             <th className='th-products-table'>Stock</th>
                             <th className='th-products-table'>Contenido neto</th>
                             <th className='th-products-table'>Precio de compra</th>
@@ -66,9 +66,9 @@ export default function Products() {
                             {filteredProducts.map((product) => (
                                 <tr key={product._id}>
                                     <td className='td-products-table' style={{ textAlign: 'center' }}>{product.barcode}</td>
+                                    <td className='td-products-table'>{product.brand}</td>
                                     <td className='td-products-table'>{product.name}</td>
                                     <td className='td-products-table'>{product.description}</td>
-                                    <td className='td-products-table'>{product.brand}</td>
                                     <td className='td-products-table'>{product.stock}</td>
                                     <td className='td-products-table'>{product.productContent + product.UOM}</td>
                                     <td className='td-products-table'>{'$' + product.purchasePrice}</td>
