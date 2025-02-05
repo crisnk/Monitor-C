@@ -32,7 +32,7 @@ export default function Products() {
                 <SearchBar
                     data={products}
                     onFilter={handleFilter}
-                    fields={['name', 'description', 'brand', 'stock', 'productContent', 'sellingPrice', 'purchasePrice']}
+                    fields={['barcode', 'name', 'description', 'brand', 'stock', 'productContent', 'sellingPrice', 'purchasePrice']}
                 />
                 <button type='button' className='btn btn-primary btn-sm' data-bs-toggle='modal' data-bs-target='#register-product-modal'>Registrar producto</button>
             </div>
